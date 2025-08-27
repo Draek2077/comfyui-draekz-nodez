@@ -6,6 +6,9 @@ from pathlib import Path
 from PIL import Image
 from torchvision.transforms import ToPILImage
 
+# Add this global dictionary at the top of your file, outside of any class
+JOY_CAPTION_MODELS = {}
+
 # A constant for maximum resolution dimensions
 MAX_RESOLUTION = 8192
 
@@ -257,18 +260,27 @@ class Draekz_JoyCaption:
 
     def generate(self, image, memory_mode, caption_type, caption_length, extra_option1, extra_option2, extra_option3,
                  extra_option4, extra_option5, extra_option6, extra_option7, extra_option8, person_name, max_new_tokens, temperature, top_p, top_k):
-        # load / swap the model if needed
-        if self.predictor is None or self.current_memory_mode != memory_mode:
-            if self.predictor is not None:
-                del self.predictor
-                self.predictor = None
+        # Check if the requested model is already in our global cache
+        predictor = JOY_CAPTION_MODELS.get(memory_mode)
+
+        if predictor is None:
+            # If not, unload any other versions that might be loaded to save VRAM
+            if JOY_CAPTION_MODELS:
+                print("Switching JoyCaption models, clearing old one from memory.")
+                # The .popitem() gets and removes a (key, value) pair. Since we only store one at a time, this works.
+                _key, old_predictor = JOY_CAPTION_MODELS.popitem()
+                del old_predictor
                 torch.cuda.empty_cache()
 
+            # Load the new model
             try:
-                self.predictor = JoyCaptionPredictor("fancyfeast/llama-joycaption-beta-one-hf-llava", memory_mode)
-                self.current_memory_mode = memory_mode
+                print(f"Loading JoyCaption model with memory mode: {memory_mode}")
+                predictor = JoyCaptionPredictor("fancyfeast/llama-joycaption-beta-one-hf-llava", memory_mode)
+                # Store the newly loaded model in our global cache
+                JOY_CAPTION_MODELS[memory_mode] = predictor
             except Exception as e:
-                return (f"Error loading model: {e}",)
+                # Return the error message if loading fails
+                return (f"Error loading model: {e}", f"Error loading model: {e}")
 
         extras = [extra_option1, extra_option2, extra_option3, extra_option4, extra_option5, extra_option6, extra_option7, extra_option8]
         extras = [extra for extra in extras if extra]
@@ -279,7 +291,7 @@ class Draekz_JoyCaption:
         # But JoyCaption was trained on images that were resized using lanczos, which I think PyTorch doesn't support.
         # Just to be safe, we'll convert the image to a PIL image and let the processor handle it correctly.
         pil_image = ToPILImage()(image[0].permute(2, 0, 1))
-        response = self.predictor.generate(
+        response = predictor.generate(
             image=pil_image,
             system=system_prompt,
             prompt=prompt,
