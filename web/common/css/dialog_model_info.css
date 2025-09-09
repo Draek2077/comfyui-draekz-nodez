@@ -1,0 +1,336 @@
+.draekz-info-dialog {
+  width: 90vw;
+  max-width: 960px;
+}
+.draekz-info-dialog .draekz-info-area {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.draekz-info-dialog .draekz-info-area > li {
+  display: inline-flex;
+  margin: 0;
+  vertical-align: top;
+}
+.draekz-info-dialog .draekz-info-area > li + li {
+  margin-left: 6px;
+}
+.draekz-info-dialog .draekz-info-area > li:not(.-link) + li.-link {
+  margin-left: auto;
+}
+.draekz-info-dialog .draekz-info-area > li.draekz-info-tag > * {
+  min-height: 24px;
+  border-radius: 4px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgb(69, 92, 85);
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  height: 1.6em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.1em;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px 0px 0 1px rgba(0, 0, 0, 0.5);
+}
+.draekz-info-dialog .draekz-info-area > li.draekz-info-tag > * > svg {
+  width: 16px;
+  height: 16px;
+}
+.draekz-info-dialog .draekz-info-area > li.draekz-info-tag > * > svg:last-child {
+  margin-left: 0.5em;
+}
+.draekz-info-dialog .draekz-info-area > li.draekz-info-tag > *[href] {
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.25), inset 0px -1px 0px rgba(0, 0, 0, 0.66);
+}
+.draekz-info-dialog .draekz-info-area > li.draekz-info-tag > *:empty {
+  display: none;
+}
+.draekz-info-dialog .draekz-info-area > li.-type > * {
+  background: rgb(73, 54, 94);
+  color: rgb(228, 209, 248);
+}
+.draekz-info-dialog .draekz-info-area > li.draekz-info-menu {
+  margin-left: auto;
+}
+:not(#fakeid) .draekz-info-dialog .draekz-info-area > li.draekz-info-menu .draekz-button {
+  margin: 0;
+  min-height: 24px;
+  padding: 0 12px;
+}
+.draekz-info-dialog .draekz-info-area > li.draekz-info-menu svg {
+  width: 16px;
+  height: 16px;
+}
+.draekz-info-dialog .draekz-info-table {
+  border-collapse: collapse;
+  margin: 16px 0px;
+  width: 100%;
+  font-size: 12px;
+}
+.draekz-info-dialog .draekz-info-table tr.editable button {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+}
+.draekz-info-dialog .draekz-info-table tr.editable button svg + svg {
+  display: none;
+}
+.draekz-info-dialog .draekz-info-table tr.editable.-draekz-editing button svg {
+  display: none;
+}
+.draekz-info-dialog .draekz-info-table tr.editable.-draekz-editing button svg + svg {
+  display: inline-block;
+}
+.draekz-info-dialog .draekz-info-table td {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0;
+  vertical-align: top;
+}
+.draekz-info-dialog .draekz-info-table td:first-child {
+  background: rgba(255, 255, 255, 0.075);
+  width: 10px;
+}
+.draekz-info-dialog .draekz-info-table td:first-child > *:first-child {
+  white-space: nowrap;
+  padding-right: 32px;
+}
+.draekz-info-dialog .draekz-info-table td:first-child small {
+  display: block;
+  margin-top: 2px;
+  opacity: 0.75;
+}
+.draekz-info-dialog .draekz-info-table td:first-child small > [data-action] {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.draekz-info-dialog .draekz-info-table td:first-child small > [data-action]:hover {
+  text-decoration: none;
+}
+.draekz-info-dialog .draekz-info-table td a, .draekz-info-dialog .draekz-info-table td a:hover, .draekz-info-dialog .draekz-info-table td a:visited {
+  color: inherit;
+}
+.draekz-info-dialog .draekz-info-table td svg {
+  width: 1.3333em;
+  height: 1.3333em;
+  vertical-align: -0.285em;
+}
+.draekz-info-dialog .draekz-info-table td svg.logo-civitai {
+  margin-right: 0.3333em;
+}
+.draekz-info-dialog .draekz-info-table td > *:first-child {
+  display: block;
+  padding: 6px 10px;
+}
+.draekz-info-dialog .draekz-info-table td > input, .draekz-info-dialog .draekz-info-table td > textarea {
+  padding: 5px 10px;
+  border: 0;
+  box-shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  font: inherit;
+  appearance: none;
+  background: #fff;
+  color: #121212;
+  resize: vertical;
+}
+.draekz-info-dialog .draekz-info-table td > input:only-child, .draekz-info-dialog .draekz-info-table td > textarea:only-child {
+  width: 100%;
+}
+:not(#fakeid) .draekz-info-dialog .draekz-info-table td .draekz-button[data-action=fetch-civitai] {
+  font-size: inherit;
+  padding: 6px 16px;
+  margin: 2px;
+}
+.draekz-info-dialog .draekz-info-table tr[data-field-name=userNote] td > span:first-child {
+  white-space: pre;
+}
+.draekz-info-dialog .draekz-info-table tr.draekz-info-table-break-row td {
+  border: 0;
+  background: transparent;
+  padding: 12px 4px 4px;
+  font-size: 1.2em;
+}
+.draekz-info-dialog .draekz-info-table tr.draekz-info-table-break-row td > small {
+  font-style: italic;
+  opacity: 0.66;
+}
+.draekz-info-dialog .draekz-info-table tr.draekz-info-table-break-row td:empty {
+  padding: 4px;
+}
+.draekz-info-dialog .draekz-info-table td .-help {
+  border: 1px solid currentColor;
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  line-height: 1;
+  font-size: 11px;
+  width: 12px;
+  height: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  cursor: help;
+}
+.draekz-info-dialog .draekz-info-table td .-help::before {
+  content: "?";
+}
+.draekz-info-dialog .draekz-info-table td > ul.draekz-info-trained-words-list {
+  list-style: none;
+  padding: 2px 8px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-height: 15vh;
+  overflow: auto;
+}
+.draekz-info-dialog .draekz-info-table td > ul.draekz-info-trained-words-list > li {
+  display: inline-flex;
+  margin: 2px;
+  vertical-align: top;
+  border-radius: 4px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgb(73, 91, 106);
+  font-size: 1.2em;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  height: 1.6em;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px 0px 0 1px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  white-space: nowrap;
+  max-width: 183px;
+}
+.draekz-info-dialog .draekz-info-table td > ul.draekz-info-trained-words-list > li:hover {
+  background: rgb(68, 109, 142);
+}
+.draekz-info-dialog .draekz-info-table td > ul.draekz-info-trained-words-list > li > svg {
+  width: auto;
+  height: 1.2em;
+}
+.draekz-info-dialog .draekz-info-table td > ul.draekz-info-trained-words-list > li > span {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.draekz-info-dialog .draekz-info-table td > ul.draekz-info-trained-words-list > li > small {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5em;
+  background: rgba(0, 0, 0, 0.2);
+}
+.draekz-info-dialog .draekz-info-table td > ul.draekz-info-trained-words-list > li.-draekz-is-selected {
+  background: rgb(42, 126, 193);
+}
+.draekz-info-dialog .draekz-info-images {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+}
+.draekz-info-dialog .draekz-info-images > li {
+  scroll-snap-align: start;
+  max-width: 90%;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  margin: 6px;
+  font-size: 0;
+  position: relative;
+}
+.draekz-info-dialog .draekz-info-images > li figure {
+  margin: 0;
+  position: static;
+}
+.draekz-info-dialog .draekz-info-images > li figure video, .draekz-info-dialog .draekz-info-images > li figure img {
+  max-height: 45vh;
+}
+.draekz-info-dialog .draekz-info-images > li figure figcaption {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  padding: 12px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.25s ease-in-out;
+}
+.draekz-info-dialog .draekz-info-images > li figure figcaption > span {
+  display: inline-block;
+  padding: 2px 4px;
+  margin: 2px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  word-break: break-word;
+}
+.draekz-info-dialog .draekz-info-images > li figure figcaption > span label {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+.draekz-info-dialog .draekz-info-images > li figure figcaption > span a {
+  color: inherit;
+  text-decoration: underline;
+}
+.draekz-info-dialog .draekz-info-images > li figure figcaption > span a:hover {
+  text-decoration: none;
+}
+.draekz-info-dialog .draekz-info-images > li figure figcaption > span a svg {
+  height: 10px;
+  margin-left: 4px;
+  fill: currentColor;
+}
+.draekz-info-dialog .draekz-info-images > li figure figcaption:empty {
+  text-align: center;
+}
+.draekz-info-dialog .draekz-info-images > li figure figcaption:empty::before {
+  content: "No data.";
+}
+.draekz-info-dialog .draekz-info-images > li:hover figure figcaption {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.draekz-info-dialog .draekz-info-images > li .draekz-info-table {
+  width: calc(100% - 16px);
+}
+.draekz-info-dialog .draekz-info-civitai-link {
+  margin: 8px;
+  color: #eee;
+}
+.draekz-info-dialog .draekz-info-civitai-link a, .draekz-info-dialog .draekz-info-civitai-link a:hover, .draekz-info-dialog .draekz-info-civitai-link a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+.draekz-info-dialog .draekz-info-civitai-link > svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}

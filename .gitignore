@@ -1,1 +1,13 @@
-.idea
+__pycache__
+*.ini
+wildcards/**
+.vscode/
+.idea/
+node_modules/
+draekz_config.json
+web/draekz_config.js
+web/comfyui/draekz_config.js
+userdata/
+userdata/**
+web/comfyui/testing/
+web/comfyui/tests/

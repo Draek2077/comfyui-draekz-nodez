@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-draekz-nodez"
+description = "Making ComfyUI more comfortable."
+version = "1.0"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/draekz/comfyui-draekz-nodez"
+
+[tool.comfy]
+PublisherId = "draekz"
+DisplayName = "comfyui-draekz-nodez"
+Icon = "https://comfy.draekz.com/media/draekz.svg"
