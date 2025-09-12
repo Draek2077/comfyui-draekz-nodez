@@ -13,3 +13,11 @@ https://github.com/wallish77/wlsh_nodes
 https://github.com/SeargeDP/ComfyUI_Searge_LLM
 
 Licenses for their open source projects is included in the license files, and I have noted all of the files that have been adapted from their code. The rest of the code is released under the main license.
+
+## Support This Project
+
+If you find this project helpful, consider supporting me with a coffee!
+
+<a href="https://buymeacoffee.com/draekzs">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
+</a>
